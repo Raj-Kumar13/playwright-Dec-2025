@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.env
+.DS_Store
+.vscode/
+coverage/
+npm-debug.log
+yarn-error.log
+.idea/
+*.log
+*.tsbuildinfo
+build/
+.cache/
+.next/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/

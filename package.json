@@ -1,0 +1,31 @@
+{
+  "name": "playwright-dec-2025",
+  "version": "1.0.0",
+  "description": "Playwright Recap",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "report": "npx allure generate allure-results --clean -o allure-report && npx allure open allure-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raj-Kumar13/playwright-Dec-2025.git"
+  },
+  "author": "Raj Kumar K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raj-Kumar13/playwright-Dec-2025/issues"
+  },
+  "homepage": "https://github.com/Raj-Kumar13/playwright-Dec-2025#readme",
+  "dependencies": {
+    "npm": "^11.7.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
+    "allure-commandline": "^2.36.0",
+    "allure-playwright": "^3.4.3"
+  }
+}
