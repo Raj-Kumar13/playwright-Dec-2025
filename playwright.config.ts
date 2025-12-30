@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices } from "@playwright/test";
 
 /**
  * Read environment variables from file.
@@ -18,11 +18,32 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  //retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['allure-playwright'],["html"]],
+  reporter: [
+    ["allure-playwright"],
+    ["html"],
+    [
+      "playwright-html-reporter",
+      {
+        testFolder: "./src/tests",
+        open: "never",
+        filename: "report.html",
+        title: "OPEN CART HTML REPORT",
+        project: "Open Cart Tests",
+        release: "9.87.6",
+        embedAssets: true,
+        embedAttachment: true,
+        outputFolder: "playwright-html-report",
+        minifyAssets: true,
+        startServer: false,
+        includeFailureMsg: true,
+        //includeConsoleLog: true,
+      },
+    ],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -30,8 +51,8 @@ export default defineConfig({
     headless: false,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-    screenshot: 'on-first-failure',
-    video:'on-first-retry'
+    screenshot: "on-first-failure",
+    video: "on-first-retry",
   },
 
   /* Configure projects for major browsers */
