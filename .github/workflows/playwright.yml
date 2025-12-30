@@ -22,11 +22,11 @@ jobs:
       run: npm ci
       #4 Install Playwright browsers, Run tests and Upload report artifact
     - name: Install Playwright Browsers
-      run: npx playwright install chromium chrome msedge firefox webkit--with-deps
+      run: npx playwright install chromium chrome msedge firefox webkit --with-deps
       #5 Run Playwright tests and upload report
     - name: Run Playwright tests
       run: npx playwright test
-      
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
