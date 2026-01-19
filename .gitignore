@@ -19,3 +19,5 @@ build/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+allure-report/*
+allure-results/*

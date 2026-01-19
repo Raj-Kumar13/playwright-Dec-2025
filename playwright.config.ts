@@ -25,24 +25,24 @@ export default defineConfig({
   reporter: [
     ["allure-playwright"],
     ["html"],
-    [
-      "playwright-html-reporter",
-      {
-        testFolder: "./src/tests",
-        open: "never",
-        filename: "report.html",
-        title: "OPEN CART HTML REPORT",
-        project: "Open Cart Tests",
-        release: "9.87.6",
-        embedAssets: true,
-        embedAttachment: true,
-        outputFolder: "playwright-html-report",
-        minifyAssets: true,
-        startServer: false,
-        includeFailureMsg: true,
-        //includeConsoleLog: true,
-      },
-    ],
+    // [
+    //   "playwright-html-reporter",
+    //   {
+    //     testFolder: "./src/tests",
+    //     open: "never",
+    //     filename: "report.html",
+    //     title: "OPEN CART HTML REPORT",
+    //     project: "Open Cart Tests",
+    //     release: "9.87.6",
+    //     embedAssets: true,
+    //     embedAttachment: true,
+    //     outputFolder: "playwright-html-report",
+    //     minifyAssets: true,
+    //     startServer: false,
+    //     includeFailureMsg: true,
+    //     //includeConsoleLog: true,
+    //   },
+    // ],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

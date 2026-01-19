@@ -1,7 +1,7 @@
 import { expect } from "@playwright/test";
 import { test } from "../fixtures/applicationFixture";
 
-test.describe("Test Application Login page", () => {
+test.describe("Invalid Testcase - Application Login page", () => {
   test("do login with valid credentials", async ({
     basePage,
     loginPage,
@@ -13,7 +13,7 @@ test.describe("Test Application Login page", () => {
     await basePage.waitForElementDisplay(`img[title="naveenopencart"]`);
     await loginPage.doLogin("pwtest@nal.com", "test123");
     await basePage.waitForElementDisplay(`//h2[normalize-space(text())='My Account']`);
-    expect(page.locator(`//h2[normalize-space(text())='My Account']`)).toBeVisible({ timeout: 5000 });
+    expect(page.locator(`//h2[normalize-space(text())='My Account']`)).not.toBeVisible({ timeout: 5000 });
     await basePage.waitForElementDisplay(
       `//h2[normalize-space(text())='My Account']`,
     );
